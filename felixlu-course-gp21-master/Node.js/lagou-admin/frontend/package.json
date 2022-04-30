@@ -1,0 +1,52 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "art-template": "^4.13.2",
+    "art-template-loader": "^1.4.3",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^6.3.2",
+    "css-loader": "^5.0.1",
+    "html-webpack-plugin": "^4.5.0",
+    "style-loader": "^2.0.0",
+    "webpack": "4.44.2",
+    "webpack-cli": "3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "scripts": {
+    "build": "npx webpack",
+    "dev": "npx webpack-dev-server",
+    "lint": "eslint '**/*.js'",
+    "postlint": "npm-template-check",
+    "template-copy": "npm-template-copy --force",
+    "lintfix": "npm run lint -- --fix",
+    "preversion": "npm test",
+    "postversion": "npm publish",
+    "prepublishOnly": "git push origin --follow-tags",
+    "snap": "tap",
+    "test": "tap",
+    "posttest": "npm run lint"
+  },
+  "dependencies": {
+    "art-template": "^4.13.2",
+    "atob": "^2.1.2",
+    "file-loader": "^6.2.0",
+    "gp21-router": "^1.0.0",
+    "import-local": "^3.1.0",
+    "sme-router": "^0.12.8",
+    "url-loader": "^4.1.1"
+  },
+  "author": "GitHub Inc.",
+  "files": [
+    "bin",
+    "lib"
+  ],
+  "engines": {
+    "node": "^12.13.0 || ^14.15.0 || >=16"
+  },
+  "templateOSS": {
+    "version": "2.9.2"
+  }
+}

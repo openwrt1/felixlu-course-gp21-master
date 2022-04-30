@@ -46,7 +46,8 @@ const fsPromises = require('fs').promises
 // console.log(content.toString())
 // console.log('continue...')
 
-// ;(async () => {
+// ;
+// (async () => {
 //   let result = await fsPromises.readFile('./logs/log1.log')
 //   console.log(result.toString())
 // })()
@@ -76,6 +77,6 @@ const fsPromises = require('fs').promises
 
 // readDir('./')
 
-fs.watch('./logs/log-0.log', (err) => {
-  console.log('file has changed.')
-})
+// fs.watch('./logs/log-0.log', (err) => {
+//   console.log('file has changed.')
+// })

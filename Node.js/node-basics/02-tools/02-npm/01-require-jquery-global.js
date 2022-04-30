@@ -1,2 +1,2 @@
-// const $ = require('jquery')
-// console.log($)
+const $ = require('jquery')
+console.log($)

@@ -1,9 +1,0 @@
-<!-- <view>{{x}}</view>
-
-<view>{{_x}}</view>
-
-<view>{{_title}}</view> -->
-
-<view>
-{{timeString}}
-</view>

@@ -1,6 +1,8 @@
 const http = require('http')
 const url = require('url')
-const { createProxyMiddleware } = require('http-proxy-middleware')
+const {
+  createProxyMiddleware
+} = require('http-proxy-middleware')
 
 const server = http.createServer((req, res) => {
   const urlStr = req.url
@@ -25,7 +27,7 @@ const server = http.createServer((req, res) => {
 
     proxy2(req, res)
   } else {
-    
+
     console.log('error')
   }
 })

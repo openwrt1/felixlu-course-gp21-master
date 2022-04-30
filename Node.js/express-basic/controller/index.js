@@ -29,14 +29,14 @@ const list = (req, res, next) => {
   //   data: JSON.stringify(dataArray)
   // })
 
-  // res.render('list-html', {
-  //   data: dataArray
-  // })
+  res.render('list-html', {
+    data: dataArray
+  })
 
   var html = template(path.join(__dirname, '../view/list-html.art'), {
     data: listModel.dataArray
   })
-  
+
   fs.writeFileSync(path.join(__dirname, '../public/list.html'), html)
 
   res.send('pages has been compiled.')
@@ -51,7 +51,11 @@ const token = (req, res, next) => {
 
   // 非对称加密
   const privateKey = fs.readFileSync(path.join(__dirname, '../keys/rsa_private_key.pem'))
-  const tk = jwt.sign({username: 'admin'}, privateKey, { algorithm: 'RS256'})
+  const tk = jwt.sign({
+    username: 'admin'
+  }, privateKey, {
+    algorithm: 'RS256'
+  })
 
   const publicKey = fs.readFileSync(path.join(__dirname, '../keys/rsa_public_key.pem'))
   const result = jwt.verify(tk, publicKey)

@@ -7,13 +7,19 @@ http.createServer(async (req, res) => {
   // 获取url
   let urlString = req.url
   let filePathName = path.join(__dirname, './public', urlString)
+  debugger
 
+  // console.log(urlString + "===")
   // 根据url, 去public目录下读取数据
   // 如果你调用的方法是一个异步函数，在获取结果的时候，一定要await
   let result
   try {
     result = await readStaticFile(filePathName, res)
-    var { data, mimeType } = result
+    console.log(result);
+    var {
+      data,
+      mimeType
+    } = result
   } catch {
     console.log(result)
   }

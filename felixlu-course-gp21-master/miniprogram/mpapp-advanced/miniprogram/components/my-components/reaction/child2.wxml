@@ -1,5 +1,0 @@
-<view bindmyevent="handleMyEvent">
-  <slot></slot>
-  {{title}}
-  {{aa}}
-</view>

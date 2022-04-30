@@ -1,9 +1,0 @@
-{
-  "component": true,
-  "usingComponents": {
-    "child": "./child",
-    "child2": "./child2",
-    "child3": "./child3",
-    "child4": "./child4"
-  }
-}

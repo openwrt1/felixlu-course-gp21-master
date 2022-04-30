@@ -1,7 +1,9 @@
 import usersAddTpl from '../../views/users-add.art'
 import page from '../../databus/page'
 
-import { usersAdd as usersAddModel } from '../../models/users-add'
+import {
+  usersAdd as usersAddModel
+} from '../../models/users-add'
 
 // 添加用户
 export const addUser = () => {
@@ -23,7 +25,7 @@ export const addUser = () => {
     const $btnClose = $('#users-close')
     $btnClose.click()
   }
-  
+
   // 点击保存，提交表单
   $('#users-save').on('click', _save)
 }

@@ -1,6 +1,6 @@
 <ul class="pagination pagination-sm no-margin pull-right" id="users-page-list">
   <li><a href="javascript:void(0)">&laquo;</a></li>
-  {{each pageArray}}
+  {{each page_aray_list}}
   <li><a href="javascript:void(0)">{{$index+1}}</a></li>
   {{/each}}
   <li><a href="javascript:void(0)">&raquo;</a></li>

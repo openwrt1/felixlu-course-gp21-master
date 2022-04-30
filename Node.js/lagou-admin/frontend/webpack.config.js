@@ -1,7 +1,9 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const {
+  CleanWebpackPlugin
+} = require('clean-webpack-plugin')
 
 module.exports = {
   // 配置环境
@@ -19,10 +21,9 @@ module.exports = {
     path: path.join(__dirname, './dist'),
     filename: '[name].js'
   },
-
+  //如何载入.art文件
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.art$/,
         use: {
           loader: 'art-template-loader',
@@ -37,14 +38,12 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|gif)$/,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 8192
-            }
+        use: [{
+          loader: 'url-loader',
+          options: {
+            limit: 8192
           }
-        ]
+        }]
       }
     ]
   },
@@ -58,8 +57,7 @@ module.exports = {
     }),
 
     new CopyPlugin({
-      patterns: [
-        {
+      patterns: [{
           from: './public/*.ico',
           to: path.join(__dirname, './dist/favicon.ico'),
         },
@@ -75,12 +73,12 @@ module.exports = {
 
   // 配置server
   devServer: {
-    host: '10.9.72.224',
+    host: '192.168.10.113',
     contentBase: path.join(__dirname, './dist'),
     port: 8080,
     proxy: {
       "/api": {
-        target: 'http://localhost:3000'
+        target: 'http://192.168.10.113:3000'
       },
       // "/socket": {
       //   target: 'http://localhost:3000',

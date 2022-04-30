@@ -5,7 +5,7 @@
 //     console.log(result.data)
 //   })
 //   .catch((err) => {
-    
+
 //   })
 
 const myChunk = require('03-custom')

@@ -1,4 +1,0 @@
-<view>
-  form
-  <slot></slot>
-</view>

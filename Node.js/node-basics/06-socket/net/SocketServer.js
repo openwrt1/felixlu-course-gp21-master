@@ -28,6 +28,7 @@ let clients = {}
 let clientName = 0
 
 server.on('connection', (client) => {
+  // console.log(client);
   client.name = ++clientName
   clients[client.name] = client
 

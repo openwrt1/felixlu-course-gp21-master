@@ -1,4 +1,0 @@
-<form bindsubmit="submit">
-  <custom-comp></custom-comp>
-  <button form-type="submit">submit</button>
-</form>

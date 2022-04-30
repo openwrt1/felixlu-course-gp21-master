@@ -1,26 +1,37 @@
-const { Users } = require('../utils/db')
+const {
+    Users
+} = require('../utils/db')
 
 const findUser = (username) => {
-  return Users.findOne({username})
+    return Users.findOne({
+        username
+    })
 }
 
-const signup = ({username, password}) => {
-  const users = new Users({
+
+const signup = ({
     username,
     password
-  })
-  return users.save()
+}) => {
+    const users = new Users({
+        username,
+        password
+    })
+    const result = users.save()
+    // console.log(result);
+    return result
 }
 
-const findList = () => {
-  return Users.find().sort({_id: -1})
+const findlist = () => {
+    // console.log(Users.find());
+    return Users.find().sort({
+        _id: -1
+    })
 }
-
-const remove = id => {
-  return Users.deleteOne({_id: id})
+const delete_user_id = (id) => {
+    return Users.findByIdAndRemove(id)
 }
-
 exports.signup = signup
 exports.findUser = findUser
-exports.findList = findList
-exports.remove = remove
+exports.findlist = findlist
+exports.delete_user_id = delete_user_id

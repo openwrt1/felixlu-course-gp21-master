@@ -1,6 +1,6 @@
 const http = require('http')
 const https = require('https')
-const cheerio = require('cheerio')
+const cheerio = require('cheerio') //这个是虚拟DOM
 
 function filterData(data) {
   const $ = cheerio.load(data)

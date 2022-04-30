@@ -28,7 +28,7 @@ async function readStaticFile(filePathName) {
       // myReadFile(filePathName)
       //   .then(result => data = result)
       //   .catch((err) => data = err)
-
+      debugger
       data = await myReadFile(filePathName)
 
     } else {

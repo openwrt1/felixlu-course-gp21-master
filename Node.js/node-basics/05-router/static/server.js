@@ -13,7 +13,10 @@ http.createServer(async (req, res) => {
   let result
   try {
     result = await readStaticFile(filePathName, res)
-    var { data, mimeType } = result
+    var {
+      data,
+      mimeType
+    } = result
   } catch {
     console.log(result)
   }

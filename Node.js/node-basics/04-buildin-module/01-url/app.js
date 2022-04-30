@@ -3,6 +3,8 @@ const logger = require('../utils/log')
 const url = require('url')
 
 const urlString = 'https://www.baidu.com:443/path/index.html?id=2#tag=3'
+// console.log(urlString);
+// console.log(url.parse(urlString));
 
 const urlObj = {
   protocol: 'https:',
@@ -21,9 +23,9 @@ const urlObj = {
 
 // logger.debug(url.parse(urlString))
 // logger.debug(url.format(urlObj))
-// logger.debug(url.resolve('http://www.abc.com/a', '../'))
-// logger.debug(url.resolve('http://www.abc.com/a', '/b'))
+logger.debug(url.resolve('http://www.abc.com/a', '../'))
+logger.debug(url.resolve('http://www.abc.com/a', '/b'))
 
 const urlParams = new URLSearchParams(url.parse(urlString).search)
-// logger.debug(urlParams)
+logger.debug(urlParams)
 logger.debug(urlParams.get('id'))

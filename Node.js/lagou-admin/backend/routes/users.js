@@ -1,15 +1,34 @@
-var express = require('express')
-var router = express.Router()
+var express = require('express');
+const {
+  signup,
+  list,
+  remove,
+  signin,
+  signout,
+  isAuth
+} = require('../controllers/inde')
+const {
+  auth
+} = require('../middlewares/auth')
 
-const { signup, list, remove, signin, signout, isAuth } = require('../controllers/users')
-const { auth } = require('../middlewares/auth')
 
-router.get('/', auth, list)
+var router = express.Router();
+// console.log(9000);
+/* GET users listing. */
+router.get('/signup', function (req, res, next) {
+  res.send('respond with a resource');
+});
+router.get('/list', auth, list)
+
 router.delete('/', auth, remove)
 
-router.post('/', auth, signup)
-router.post('/signin', signin)
-router.get('/signout', auth, signout)
-router.get('/isAuth', isAuth)
+router.post('/signup', signup);
+router.post('/signin', signin);
+router.get('/signout', auth, signout);
+router.get('/isAuth', isAuth);
 
-module.exports = router
+
+
+
+
+module.exports = router;

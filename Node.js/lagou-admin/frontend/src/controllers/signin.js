@@ -1,5 +1,7 @@
 import signinTpl from '../views/signin.art'
-import { signin as signinModel } from '../models/signin'
+import {
+  signin as signinModel
+} from '../models/signin'
 
 const htmlSignin = signinTpl({})
 
@@ -7,10 +9,13 @@ const _handleSubmit = (router) => {
   return async (e) => {
     e.preventDefault()
     const data = $('#signin').serialize()
-    let { jqXHR, res } = await signinModel(data)
+    let {
+      jqXHR,
+      res
+    } = await signinModel(data)
     const token = jqXHR.getResponseHeader('X-Access-Token')
     localStorage.setItem('lg-token', token)
-    if(res.ret) {
+    if (res.ret) {
       console.log(0)
       router.go('/index/users')
     }

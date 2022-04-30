@@ -30,7 +30,9 @@ require('http')
 
   .createServer((req, res) => {
     const urlString = req.url
+    // console.log(urlString.split('.'));
     const type = mime.getType(urlString.split('.')[1])
+    console.log(type);
     res.writeHead(200, {
       'content-type': type
     })

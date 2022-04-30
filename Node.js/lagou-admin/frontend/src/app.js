@@ -3,7 +3,20 @@ import './assets/common.css'
 
 // 载入路由
 import router from './routes'
+// console.log(router)
 
-const hash = location.hash.slice(1)
-
-router.go(hash)
+$.ajax({
+    url: 'api/users/isAuth',
+    type: 'get',
+    dataType: 'json',
+    success: (result) => {
+        if (result.ret) {
+            console.log("有权限登陆");
+            router.go('/index')
+        } else {
+            console.log(result)
+            router.go('/signin')
+        }
+    }
+})
+// router.go('/')
